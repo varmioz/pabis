@@ -7,4 +7,4 @@ Template Generation
 
 Run as:
 
-$ python pabis-gen-v1.py <csv_data>
+$ python pabis-gen-v1.py csv_data.csv
