@@ -7,6 +7,7 @@
 import os	# Miscellaneous operating system interfaces
 import sys	# System-specific parameters and functions
 import csv	# CSV File Reading and Writing
+import time    # Time access and conversions
 
 templates = {} # create dictionary with used templates
 
@@ -15,9 +16,10 @@ def handle_data(data):
     '''
     if not os.path.isfile(data):   # Return True if path of csv file is an existing directory.
         print 'Error! CSV data file does not exists: %s' % data
-        sys.exit('Or type correct filename <csv_data>')		# exit the process when called from the main thread with message in ('')
+        sys.exit('Or type correct filename <csv_data>')	# exit the process when called from the main thread with message in ('')
         
     with open(data, 'rb') as csvfile:
+    	t = time.clock()
         reader = csv.DictReader(csvfile)	# class csv.DictReader(csvfile, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)
         number_of_files = 0 # variable to count number of files
 
@@ -40,9 +42,10 @@ def handle_data(data):
             print template_name, row['filename']   # print template_name with target .ept
             with open(row['filename'], 'wb') as target_ept:   # take empty target.ept
                 target_ept.write(template.format(**row))    # substitute key values in template with values from row
-    print 'Number of generated files is %i' % number_of_files
-    print sys.platform   # platform identifier
-
+                
+    print '%i files generated for %s seconds' % (number_of_files, (time.clock() - t))    # N files for x sec
+    print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + ' run by ' + sys.platform    # systime + platform identifier
+    
 if __name__ == '__main__':
 
     if len(sys.argv) <> 2: # to check if command format is right and contains 2 arguments after script_name
