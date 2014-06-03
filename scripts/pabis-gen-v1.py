@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
 #   Packet Abis over Ethernet. Preparation XML files based on template
-#   version 4 under edition of me (temp version)
-#	format of command is >python pabis-over-eth-v4.py PAbis_BTS_input.csv
+#   version 1 Гыщм
+#   format of command is >python pabis-over-eth-v4.py PAbis_BTS_input.csv
 
 
 import os	# Miscellaneous operating system interfaces
@@ -20,8 +20,8 @@ def handle_data(data):
         
     with open(data, 'rb') as csvfile:
         reader = csv.DictReader(csvfile)	# class csv.DictReader(csvfile, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)
+        
         for row in reader:	# go though all line in CSV
-
             template_name = row['TemplateName']	# take template_name from line in column 'TemplateName'
               
             if os.path.isfile(template_name):	# Check if template_name has corresponding template.ept is in working directory.
