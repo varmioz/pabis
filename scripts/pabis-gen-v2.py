@@ -19,7 +19,7 @@ def handle_data(data):
         sys.exit('Or type correct filename <csv_data>') # exit the process when called from the main thread with message in ('')
         
     with open(data, 'rb') as csvfile:
-        t = time.clock()    # takes current time
+        
         reader = csv.DictReader(csvfile)	# class csv.DictReader(csvfile, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)
         number_of_files = 0 # variable to count number of files
     
@@ -47,7 +47,8 @@ def handle_data(data):
     print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + ' run by ' + sys.platform    # systime + platform identifier
 
 if __name__ == '__main__':
-
+	
+    t = time.clock()    # takes current time
     if len(sys.argv) <> 2: # to check if command format is right and contains 2 arguments after script_name
 		sys.exit('Type command in format ./pabis-over-eth.py <csv_data>')  # exit the process when called from the main thread with message in ('')
     
