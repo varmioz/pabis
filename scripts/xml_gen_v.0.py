@@ -40,7 +40,6 @@ def handle_data(data):
     with open(data, 'rb') as csvfile:
         
         reader = csv.DictReader(csvfile)	# class csv.DictReader(csvfile, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)
-        number_of_files = 0 # variable to count number of files
         filename = raw_input('Enter the target XML filename without extension: ') + '.xml' # ask user to enter target xml filename
 
         while os.path.isfile(filename): # checking for unic targetxml name
@@ -64,8 +63,6 @@ def handle_data(data):
                 print 'Error! Template `%s` does not exist' % template_name
                 sys.exit('WTF?')
 
-            number_of_files += 1
-            # print template_name, row['filename']   # print template_name with target .ept
             with open(filename, 'a') as target_xml:    # take empty xml to append data
                 target_xml.write(template.format(**row))    # substitute key values in template with values from row
 
