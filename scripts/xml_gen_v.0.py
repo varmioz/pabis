@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
-#   Site creation. Preparation XML files based on template
-#   version 0 Dima Draft
-#	format of command is >python xml_gen_v.0.py xml_input.csv
+# Site creation. Preparation XML files based on template
+# version 0 Varmioz Draft
+# format of command is >python xml_gen_v.0.py xml_input.csv
 
 import os	# Miscellaneous operating system interfaces
 import sys	# System-specific parameters and functions
