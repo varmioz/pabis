@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
 #   Packet Abis over Ethernet. Preparation XML files based on template
-#   version 5 Dima with dictionary to reduce processing time
-#	format of command is >python pabis-over-eth-v5.py PAbis_BTS_input.csv
+#   version 2 Varmioz with dictionary to reduce processing time
+#   format of command is >python pabis-over-eth-v5.py PAbis_BTS_input.csv
 
 import os	# Miscellaneous operating system interfaces
 import sys	# System-specific parameters and functions
