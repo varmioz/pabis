@@ -38,9 +38,11 @@ def templ_name(SegName):
         sys.exit()
 
     elif SegName[0:3] == 'KHA' and SegName[12] == 'D': return 'genSTUD.xml'        
-    elif SegName[0:3] == 'KHA' and SegName[12] == 'G': return 'genSTUG.xml'        
-    elif SegName[0:3] != 'KHA' and SegName[12] == 'D': return 'genDTUD.xml'        
-    elif SegName[0:3] != 'KHA' and SegName[12] == 'G': return 'genDTUG.xml'        
+    elif SegName[0:3] == 'KHA' and SegName[12] == 'G': return 'genSTUG.xml'
+    elif SegName[0:3] == 'DNE' and SegName[12] == 'D': return 'genDTUD.xml'        
+    elif SegName[0:3] == 'DNE' and SegName[12] == 'G': return 'genDTUG.xml' 
+    elif SegName[0:3] == 'KIE' and SegName[12] == 'D': return 'genSTUD.xml'        
+    elif SegName[0:3] == 'KIE' and SegName[12] == 'G': return 'genSTUG.xml'        
     else: sys.exit('Check the CellName!')
 
 def handle_data(data):
