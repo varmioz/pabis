@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # Site creation. Preparation XML files based on template
-# version 1 Varmioz to generate xml for BTS parameters changes base on BTS templates
+# version 2 Varmioz to generate xml for BTS parameters changes base on BTS templates
 #	format of command is >python xml_BTS_par_gen_v.0.py xml_par_input.csv
 
 import os	# Miscellaneous operating system interfaces
@@ -42,7 +42,9 @@ def templ_name(SegName):
     elif SegName[0:3] == 'DNE' and SegName[12] == 'D': return 'genDTUD.xml'        
     elif SegName[0:3] == 'DNE' and SegName[12] == 'G': return 'genDTUG.xml' 
     elif SegName[0:3] == 'KIE' and SegName[12] == 'D': return 'genSTUD.xml'        
-    elif SegName[0:3] == 'KIE' and SegName[12] == 'G': return 'genSTUG.xml'        
+    elif SegName[0:3] == 'KIE' and SegName[12] == 'G': return 'genSTUG.xml'
+    elif SegName[0:3] == 'LVI' and SegName[12] == 'D': return 'genSTUD.xml'        
+    elif SegName[0:3] == 'LVI' and SegName[12] == 'G': return 'genSTUG.xml'	
     else: sys.exit('Check the CellName!')
 
 def handle_data(data):
